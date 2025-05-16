@@ -30,23 +30,22 @@ const AdminLayout: React.FC = () => (
 
 const App: React.FC = () => {
   // const [count, setCount] = useState(0)
+  // const originalPath = import.meta.env.VITE_ORIGINAL_PATH as string
 
   return (
-    <>
       <Routes>
-        <Route path={"/"} element={<UserLayout />}>
+        <Route path={""} element={<UserLayout />}>
           <Route index element={<h1>Dashboardss</h1>} />
-          <Route path={"/settings"} element={<Home />} />
-          <Route path={"/logout"} element={<h1>Log Out</h1>} />
+          <Route path={"settings"} element={<Home />} />
+          <Route path={"logout"} element={<h1>Log Out</h1>} />
         </Route>
-        <Route path={"/admin"} element={<AdminLayout />}>
+        <Route path={"admin"} element={<AdminLayout />}>
           <Route index element={<h1>Admin Home</h1>} />
-          <Route path={"/admin/settings"} element={<h1>Admin Settings</h1>} />
-          <Route path={"/admin/users"} element={<h1>Admin Manage Users</h1>} />
+          <Route path={"settings"} element={<h1>Admin Settings</h1>} />
+          <Route path={"users"} element={<h1>Admin Manage Users</h1>} />
         </Route>
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
-    </>
   )
 }
 
